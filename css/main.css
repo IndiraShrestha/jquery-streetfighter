@@ -24,12 +24,12 @@ body{
 	padding-top:1em;
 	padding-bottom:1em;
 }
-.ryu-still, .ryu-ready, .ryu-throwing {
+.ryu-still, .ryu-ready, .ryu-throwing .ryu-cool{
 	width:659px;
 	height:494px;
 }
 
-.ryu-ready, .ryu-throwing{
+.ryu-ready, .ryu-throwing .ryu-cool{
 	display:none;
 }
 
@@ -37,14 +37,19 @@ body{
 .ryu-still {
 	background-image:url('../images/ryu-standing-still.png');
 }
-.ryu-ready{
+.ryu-ready {
 	background-image: url( '../images/ryu-ready-position.gif');
 }
-.ryu-throwing{
+.ryu-throwing {
 	background-image: url( '../images/ryu-throwing-hadouken.png' );
 }
 
-.ryu-still, .ryu-ready, .ryu-throwing, .hadouken {
+/*adding ryu cool image*/
+.ryu-cool {
+	background-image: url('../images/ryu-cool.gif');
+}
+
+.ryu-still, .ryu-ready, .ryu-throwing, .hadouken .ryu-cool{
 	background-repeat: no-repeat;
 }
 /*styling the hadouken*/
@@ -53,10 +58,20 @@ body{
 	width:156px;
 	height:90px;
 	display:none;
-
+	/*float is not really doing much here as we have position it absolute in here but it could be used for the older brower */
+	float:left;
 	position:absolute;
 	z-index:10;
 	top:180px;
 	left:525px;
+}
+
+/*styling rinstruction*/
+.instruction{
+	width:600px;
+	height:494px;
+	float:right;
+	padding-top:4.5em;
+	padding-bottom:1em;
 }
 

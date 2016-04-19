@@ -1,7 +1,5 @@
 $(document ).ready( function() {
 	
-	
-
 	$('.ryu').mouseenter(function() {
 		$('.ryu-still').hide();
 		//The throwing and hadouken needs to be hidden as well because of
@@ -9,6 +7,7 @@ $(document ).ready( function() {
 		$('.ryu-throwing').hide();
 		$('.hadouken').hide();
 		$('.ryu-ready').show();
+		$('.ryu-cool').hide();
 	})
 	.mouseleave(function(){
 		$('.ryu-ready').hide();
@@ -16,6 +15,7 @@ $(document ).ready( function() {
 		//the same logic of edge case
 		$('.ryu-still').show();
 		$('.hadouken').hide();
+		$('.ryu-cool').hide();
 	})
 	.mousedown(function(){
 		//play the hadouken sound
@@ -24,6 +24,7 @@ $(document ).ready( function() {
 		$('.ryu-ready').hide();
 		$('.ryu-throwing').show();
 		$('.ryu-still').hide();
+		$('.ryu-cool').hide();
 		$('.hadouken').finish().show().animate(
 			{'left': '1200px'},
 			500,
@@ -39,6 +40,7 @@ $(document ).ready( function() {
 		$('.ryu-throwing').hide();
 		$('.ryu-still').hide();
 		$('.ryu-ready').show();
+		$('.ryu-cool').hide();
 		
 	//ryu goes back to his ready position and dont want hadouken to disapper	
 	});
@@ -50,4 +52,10 @@ $(document ).ready( function() {
 		$('#hadouken-sound')[0].volume=0.5;
 		$('#hadouken-sound')[0].load();
 		$('#hadouken-sound')[0].play();
-	}
+	}	
+
+//To execute the X keydown function
+	$('.ryu-cool').keydown(function(){
+		$('.ryu-cool').show();
+	});
+
