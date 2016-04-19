@@ -74,4 +74,15 @@ body{
 	padding-top:4.5em;
 	padding-bottom:1em;
 }
-
+.title{
+	font-style:comic;
+	font-size:1.30em;
+	font-color:#804000;
+	text-shadow:1px 1px #e67300;
+}
+ul{
+	font-style:comic;
+	font-size:1em;
+	font-color:#ff0000;
+	text-shadow:1px 1px #ff8080;
+}
