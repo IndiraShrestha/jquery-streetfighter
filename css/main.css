@@ -16,11 +16,17 @@ body{
 *{
 	outline:red 1px solid;
 }
+
+.ryu-cool {
+	width: 659px;
+	height: 494px;
+}
+
 /*styling ryu image and the anitmations*/
 .ryu{
 	width:659px;
 	height:494px;
-	float:left;
+	float: left;
 	padding-top:1em;
 	padding-bottom:1em;
 }
@@ -29,9 +35,9 @@ body{
 	height:494px;
 }
 
-.ryu-ready, .ryu-throwing .ryu-cool{
+/*.ryu-ready, .ryu-throwing .ryu-cool{
 	display:none;
-}
+}*/
 
 /*adding background image*/
 .ryu-still {
@@ -77,12 +83,12 @@ body{
 .title{
 	font-style:comic;
 	font-size:1.30em;
-	font-color:#804000;
+	color:#804000;
 	text-shadow:1px 1px #e67300;
 }
 ul{
 	font-style:comic;
 	font-size:1em;
-	font-color:#ff0000;
+	color:#ff0000;
 	text-shadow:1px 1px #ff8080;
 }
