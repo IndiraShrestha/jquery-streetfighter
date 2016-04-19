@@ -55,7 +55,10 @@ $(document ).ready( function() {
 	}	
 
 //To execute the X keydown function
-	$('.ryu-cool').keydown(function(){
+.if(event.which = 88){
+
+	keydown(function(){
 		$('.ryu-cool').show();
-	});
+	})
+};
 
