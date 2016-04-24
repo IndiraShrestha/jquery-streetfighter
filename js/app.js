@@ -1,51 +1,84 @@
-$(document ).ready( function() {
-	
-	$('.ryu').mouseenter(function() {
-		$('.ryu-still').hide();
-		//The throwing and hadouken needs to be hidden as well because of
-		//the edge case its just senario that is possible but not expected
-		$('.ryu-throwing').hide();
-		$('.hadouken').hide();
-		$('.ryu-ready').show();
-		$('.ryu-cool').hide();
-	})
-	.mouseleave(function(){
-		$('.ryu-ready').hide();
-		$('.ryu-throwing').hide();
-		//the same logic of edge case
-		$('.ryu-still').show();
-		$('.hadouken').hide();
-		$('.ryu-cool').hide();
-	})
-	.mousedown(function(){
-		//play the hadouken sound
-		//after setting the function playHadouken the following line is just calling the function to when to play
-		playHadouken ();
-		$('.ryu-ready').hide();
-		$('.ryu-throwing').show();
-		$('.ryu-still').hide();
-		$('.ryu-cool').hide();
-		$('.hadouken').finish().show().animate(
-			{'left': '1200px'},
-			500,
+$(document ).ready( function() {	
+	$('.ryu')
+		.mouseenter(showReady)
+		.mouseleave(showStill)
+		.mousedown(playHadouken)
+		.mousedown(showThrowing)
+		.mousedown(hadoukenAnime)
+		.mouseup(showReady);
+
+    $(document).on('keydown keyup', function(event) {
+    	if (event.which === 88) {
+    		if (event.type == 'keydown') {
+				showCool();
+    		} else {
+				showStill();
+    		}
+    	}
+    });
+/*
+    // alternate option
+	$(document).keydown(function(event){	
+	//we want to bind the keydown to act on key press anywhere to document object. The div (.ryu) doesnt let you input/type on the keys so its better to bind it on the document (intially i had it chained it to the .ryu div which is why the function wasnt working)
+		if (event.which === 88)	{		
+			$('.ryu-cool').show();
+			$('.ryu-still').hide();
+			$('ryu-ready').hide();
+			$('ryu-throwing').hide();
+			$('.hadouken').hide();
+		}	
+	}).keyup(function(){	
+	//we want to bind the keydown to act on key press anywhere to document object. The div (.ryu) doesnt let you input/type on the keys so its better to bind it on the document (intially i had it chained it to the .ryu div which is why the function wasnt working)
+		if (event.which === 88)	{
+			$('.ryu-cool').hide();
+			$('.ryu-still').show();
+			$('ryu-ready').hide();
+			$('ryu-throwing').hide();
+			$('.hadouken').hide();
+		}	
+	}); */
+});
+
+function showReady() {
+	$('.ryu-throwing').hide();
+	$('.ryu-still').hide();
+	$('.ryu-ready').show();
+	$('.ryu-cool').hide();
+	$('.hadouken').hide();
+}
+
+function showCool() {
+	$('.ryu-cool').show();
+	$('.ryu-still').hide();
+	$('.ryu-ready').hide();
+	$('.ryu-throwing').hide();
+	$('.hadouken').hide();
+}
+
+function showStill() {
+	$('.ryu-cool').hide();
+	$('.ryu-still').show();
+	$('.ryu-ready').hide();
+	$('.ryu-throwing').hide();
+	$('.hadouken').hide();
+}
+function showThrowing() {
+	$('.ryu-cool').hide();
+	$('.ryu-still').hide();
+	$('.ryu-ready').hide();
+	$('.ryu-throwing').show();
+}
+function hadoukenAnime (){
+	$('.hadouken').finish().show().animate(
+		{'left': '1200px'},500,
 			function(){
 				$(this).hide();
 				$(this).css('left','520px');
 			}
 		//this is more generic and portable	
-			);
-		//play the hadouken anime and the sound
-	})
-	.mouseup(function(){
-		$('.ryu-throwing').hide();
-		$('.ryu-still').hide();
-		$('.ryu-ready').show();
-		$('.ryu-cool').hide();
-		
-	//ryu goes back to his ready position and dont want hadouken to disapper	
-	});
-	
-});
+	);
+
+}
 
 //this gets setting the function playHadouken for the sound
 	function playHadouken(){
@@ -54,11 +87,5 @@ $(document ).ready( function() {
 		$('#hadouken-sound')[0].play();
 	}	
 
-//To execute the X keydown function
-.if(event.which = 88){
 
-	keydown(function(){
-		$('.ryu-cool').show();
-	})
-};
 
