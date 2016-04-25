@@ -1,5 +1,5 @@
 $(document ).ready( function() {	
-	$('.ryu')
+	$('.ryu, .hulk-ryu')
 		.mouseenter(showReady)
 		.mouseleave(showStill)
 		.mousedown(playHadouken)
