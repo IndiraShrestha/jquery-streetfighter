@@ -6,21 +6,44 @@ body{
 	background-color: white;
 	margin-top: 3.9em;
 	margin-bottom:3.9em;
-	padding-left:4em;
+	padding-left:0;
 	height:40em;
 	min-width: 1000px;
 	position:relative;
 	z-index: 1;
 }
-/*temporary outline to visuliza the position*/
-*{
-	outline:red 1px solid;
+/*styling rinstruction*/
+.instruction{
+	padding-top:0.5em;
+	padding-bottom:0.5em;
+	margin-top:0;
 }
-/*styling ryu image and the anitmations*/
+.title{
+	font-style:comic;
+	font-size:1em;
+	color:#804000;
+	text-shadow:1px 1px #e67300;
+	margin:0;
+}
+ul{
+	font-style:comic;
+	font-size:0.75em;
+	color:#ff0000;
+	margin:0;
+}
+
+/*styling ryu and hulk image and the anitmations*/
 .ryu{
 	width:659px;
 	height:494px;
 	float:left;
+	padding-top:1em;
+	padding-bottom:1em;
+}
+.hulk-ryu{
+	width:659px;
+	height:494px;
+	float:right;
 	padding-top:1em;
 	padding-bottom:1em;
 }
@@ -47,8 +70,12 @@ body{
 .ryu-cool {
 	background-image: url('../images/ryu-cool.gif');
 }
+/*transforming the image of the hulk-ryu to face ryu*/
+.hulk-ryu {
+    transform: scale(-1, 1);
+}
 
-.ryu-still, .ryu-ready, .ryu-throwing, .hadouken .ryu-cool{
+.ryu-still, .ryu-ready, .ryu-throwing, .hadouken .ryu-cool,{
 	background-repeat: no-repeat;
 }
 /*styling the hadouken*/
@@ -65,22 +92,4 @@ body{
 	left:525px;
 }
 
-/*styling rinstruction*/
-.instruction{
-	width:600px;
-	height:494px;
-	float:right;
-	padding-top:4.5em;
-	padding-bottom:1em;
-}
-.title{
-	font-style:comic;
-	font-size:1.30em;
-	color:#804000;
-	text-shadow:1px 1px #e67300;
-}
-ul{
-	font-style:comic;
-	font-size:1em;
-	color:#ff0000;
-}
+
